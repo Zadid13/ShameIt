@@ -1,0 +1,31 @@
+{
+  "name": "heartsupport-community",
+  "version": "1.0.0",
+  "description": "Anonymous relationship support community platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "pg": "^8.11.0",
+    "bcryptjs": "^2.4.3"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "keywords": [
+    "community",
+    "support",
+    "relationships",
+    "anonymous",
+    "healing"
+  ],
+  "author": "HeartSupport Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "your-git-repo-url"
+  }
+}

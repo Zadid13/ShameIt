@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShameIt-Expose Your Ex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">💙 HeartSupport</div>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn btn-secondary" onclick="showLogin()">Login</button>
+                <button class="btn btn-primary" onclick="showRegister()">Join Community</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero" id="hero">
+            <h1>Find Support, Share Healing</h1>
+            <p>A safe, anonymous space to share your relationship experiences, get support, and help others on their journey to healing and growth.</p>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div class="card">
+                <h3>🤗 Anonymous Support</h3>
+                <p>Share your story without judgment. Our community provides a safe space where you can express your feelings and experiences while maintaining complete anonymity.</p>
+            </div>
+            <div class="card">
+                <h3>💬 Peer Connection</h3>
+                <p>Connect with others who understand what you're going through. Sometimes the best healing comes from knowing you're not alone in your experiences.</p>
+            </div>
+            <div class="card">
+                <h3>🌱 Growth Resources</h3>
+                <p>Access helpful resources, advice, and tools for personal growth. Learn healthy relationship patterns and how to build stronger connections.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Safe Environment</h3>
+                <p>Our moderated community ensures respectful interactions. We maintain strict guidelines to keep this space supportive and harassment-free.</p>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="auth-section" id="loginForm">
+            <h2>Welcome Back</h2>
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;" onclick="login()">Sign In</button>
+            <p style="text-align: center; color: #666;">
+                Don't have an account? <a href="#" onclick="showRegister()" style="color: #4f46e5;">Join here</a>
+            </p>
+        </div>
+
+        <!-- Register Form -->
+        <div class="auth-section" id="registerForm">
+            <h2>Join Our Community</h2>
+            <div class="form-group">
+                <label for="regEmail">Email</label>
+                <input type="email" id="regEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="regPassword">Password</label>
+                <input type="password" id="regPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="regConfirmPassword">Confirm Password</label>
+                <input type="password" id="regConfirmPassword" required>
+            </div>
+            <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;" onclick="register()">Create Account</button>
+            <p style="text-align: center; color: #666;">
+                Already have an account? <a href="#" onclick="showLogin()" style="color: #4f46e5;">Sign in</a>
+            </p>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="dashboard" id="dashboard">
+            <div class="post-form">
+                <h3 style="color: white; margin-bottom: 1rem;">Share Your Experience</h3>
+                <textarea id="postContent" placeholder="Share your story, ask for advice, or offer support to others... Your identity will remain anonymous to other users."></textarea>
+                <button class="btn btn-primary" style="margin-top: 1rem;" onclick="createPost()">Share Anonymously</button>
+            </div>
+
+            <div class="posts-container" id="postsContainer">
+                <!-- Posts will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
