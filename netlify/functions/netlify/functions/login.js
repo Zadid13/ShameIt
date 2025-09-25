@@ -120,7 +120,22 @@ try {
     data = await response.json();
 } catch (e) {
     const text = await response.text();
-    throw new Error(text || 'Unknown error');
+    throw new Error(text || 'Unknown error');    c:\Users\Zadid-13\OneDrive\Documents\Shame\netlify\functions\login.js
+    c:\Users\Zadid-13\OneDrive\Documents\Shame\netlify\functions\register.js    fetch('/.netlify/functions/login', { ... })    fetch('/.netlify/functions/register', { ... })    const response = await fetch('/.netlify/functions/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    });
+    let data;
+    try {
+        data = await response.json();
+    } catch (e) {
+        const text = await response.text();
+        throw new Error(text || 'Unknown error');
+    }
+    if (!response.ok) {
+        throw new Error(data.message || 'Login failed');
+    }
 }
 if (!response.ok) {
     throw new Error(data.message || 'Login failed');
