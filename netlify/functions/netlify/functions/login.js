@@ -93,17 +93,17 @@ exports.handler = async (event, context) => {
         };
     } catch (error) {
         console.error('Login error:', error);
-        
-        if (client._connected) {
-            await client.end();
-        }
 
+        // Always try to close the client safely
+        try { await client.end(); } catch (e) {}
+
+        // Return the real error message for debugging (remove in production)
         return {
             statusCode: 500,
             headers,
             body: JSON.stringify({
                 success: false,
-                message: 'Login failed. Please try again.'
+                message: error.message || 'Login failed. Please try again.'
             })
         };
     }
