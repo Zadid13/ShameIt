@@ -1,18 +1,6 @@
 const { Client } = require('pg');
 const bcrypt = require('bcryptjs');
 
-// Defensive fetch for login/register
-const response = await fetch('/.netlify/functions/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
-});
-if (!response.ok) {
-    const text = await response.text();
-    throw new Error(text);
-}
-const data = await response.json();
-
 exports.handler = async (event, context) => {
     const headers = {
         'Access-Control-Allow-Origin': '*',
